@@ -1,97 +1,213 @@
-body {
-	background-image: url(https://i.postimg.cc/9Fgw8dfD/1.jpg);
-	height: 100vh;
-	-webkit-background-size: cover;
-	background-size: cover;
-	background-position: center center;
+.container {
+    position: relative !important;
+    max-width: 700px;
+    height: 400px;
+    background-color: rgb(255, 255, 255);
 }
-.wrapper span {
-	position: fixed;
-	bottom: -50px;
-	height: 30px;
-	width: 30px;
-	border-radius: 50%;
-	animation: animate 10s linear infinite;
+
+.container::after {
+    backdrop-filter: blur(100px);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
 }
-.wrapper span:nth-child(1) {
-	left: 0;
-	animation-delay: .6s;
-	background-color: #fff;
+
+.min_500px {
+    min-height: 500px;
 }
-.wrapper span:nth-child(2) {
-	left: 10%;
-	animation-delay: 3s;
-	background-color: #fff;
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    animation: move 5s infinite;
 }
-.wrapper span:nth-child(3) {
-	left: 20%;
-	animation-delay: 2s;
-	background-color: #fff;
+
+
+.blue_box {
+    border-radius: 50%;
+    position: relative;
+    animation: moveblueX 15s infinite linear, moveblueY 15s infinite linear;
+    background-color: #ff0000;
 }
-.wrapper span:nth-child(4) {
-	left: 30%;
-	animation-delay: 5s;
-	background-color: #fff;
+
+
+@keyframes moveblueX {
+    0% {
+        left: 0;
+    }
+
+    25% {
+        left: -134px;
+    }
+
+    50% {
+        left: 400px;
+    }
+
+    75% {
+        left: 100px;
+    }
+
+    100% {
+        left: 0;
+    }
 }
-.wrapper span:nth-child(5) {
-	left: 40%;
-	animation-delay: 1s;
-	background-color: #fff;
+
+@keyframes moveblueY {
+    0% {
+        top: 0;
+    }
+
+    25% {
+        top: 150px;
+    }
+
+    50% {
+        top: 384px;
+    }
+
+    75% {
+        top: 100px;
+    }
+
+    100% {
+        top: 0;
+    }
 }
-.wrapper span:nth-child(6) {
-	left: 50%;
-	animation-delay: 7s;
-	background-color: #000;
+
+.red_box {
+    border-radius: 50%;
+    animation: moveX 15s infinite, moveY 15s infinite;
+    position: relative;
+    background-color: #979797;
 }
-.wrapper span:nth-child(7) {
-	left: 60%;
-	animation-delay: 6s;
-	background-color: #000;
+
+@keyframes moveX {
+    0% {
+        left: 300px;
+    }
+
+    25% {
+        left: 500px;
+    }
+
+    50% {
+        left: 700px;
+    }
+
+    75% {
+        left: 190px;
+    }
+
+    100% {
+        left: 300px;
+    }
 }
-.wrapper span:nth-child(8) {
-	left: 70%;
-	animation-delay: 8s;
-	background-color: #000;
+
+@keyframes moveY {
+    0% {
+        top: 0;
+    }
+
+    25% {
+        top: 389px;
+    }
+
+    50% {
+        top: 0;
+    }
+
+    75% {
+        top: 390px;
+    }
+
+    100% {
+        top: 0;
+    }
 }
-.wrapper span:nth-child(9) {
-	left: 80%;
-	animation-delay: 6s;
-	background-color: #000;
+
+.green_box {
+    border-radius: 50%;
+    animation: movegreenX 15s infinite, movegreenY 15s infinite;
+    position: relative;
+    background-color: #d7d7d7;
 }
-.wrapper span:nth-child(10) {
-	left: 90%;
-	animation-delay: 4s;
-	background-color: #000;
+
+@keyframes movegreenX {
+    0% {
+        left: 0;
+    }
+
+    25% {
+        left:   1010px;
+    }
+
+    50% {
+        left: 700px;
+    }
+
+    75% {
+        left: 500px;
+    }
+
+    100% {
+        left: 0px;
+    }
 }
-@keyframes animate {
-	0% {
-		bottom: 0%;
-		margin-left: 90px;
-		margin-right: 0px;
-	}
-	20% {
-		bottom: 20%;
-		margin-left: 0px;
-		margin-right: 90px;
-	}
-	40% {
-		bottom: 40%;
-		margin-left: 90px;
-		margin-right: 0px;
-	}
-	60% {
-		bottom: 60%;
-		margin-left: 0px;
-		margin-right: 90px;
-	}
-	80% {
-		bottom: 80%;
-		margin-left: 90px;
-		margin-right: 0px;
-	}
-	100% {
-		bottom: 100%;
-		margin-left: 0px;
-		margin-right: 90px;
-	}
+
+@keyframes movegreenY {
+    0% {
+        top: 269px;
+    }
+
+    25% {
+        top:  140px;
+    }
+
+    50% {
+        top: 360px;
+    }
+
+    75% {
+        top: 5px ;
+    }
+
+    100% {
+        top: 268px;
+    }
+}
+
+
+.gray_box {
+    border-radius: 50%;
+    animation: movegray 15s infinite;
+    position: relative;
+}
+
+@keyframes movegray {
+    0% {
+        top: 0;
+        left: 0;
+    }
+
+    25% {
+        top: 370px;
+        left: 70px;
+    }
+
+    50% {
+        top: 240px;
+        left: 650px;
+    }
+
+    75% {
+        left: -370px;
+        top: 100px;
+    }
+
+    100% {
+        left: 0;
+        top: 0;
+    }
 }
