@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js card</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-red-50">
+    <section class="flex  justify-center min-h-screen">
+        <div class="container flex justify-center items-center space-x-4">
+            <div class="card p-8  rounded-3xl shadow-lg mb-auto">
+                <img class="max-w-[344px] rounded-xl" src="./assets/image/card-image.png" alt="img">
+                <p class="text-2xl font-bold pt-4 ">Lorem ipsum dolor sit amet.</p>
+                <div class="cardText hidden duration-500">
+                    <p class="max-w-[344px]">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi cum
+                        quibusdam blanditiis rerum ratione tenetur voluptatum, aliquam asperiores nisi est, iusto
+                        deserunt! Quia tempora molestias aliquid eligendi similique, perferendis temporibus. </p>
+                </div>
+                <button class="  text-white btn px-4 py-3  mt-3 rounded-full bg-blue-700">Go check</button>
+            </div>
+            <div class="card p-8 shadow-md mb-auto rounded-3xl">
+                <img class="max-w-[344px] rounded-xl" src="./assets/image/card-image.png" alt="img">
+                <p class="text-2xl font-bold pt-4">Lorem ipsum dolor sit amet.</p>
+                <div class="cardText hidden duration-500 ">
+                    <p class="max-w-[344px]">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi cum
+                        quibusdam blanditiis rerum ratione tenetur voluptatum, aliquam asperiores nisi est, iusto
+                        deserunt! Quia tempora molestias aliquid eligendi similique, perferendis temporibus. </p>
+                </div>
+                <button class="  text-white btn px-4 py-3 mt-3 rounded-full bg-blue-700">Go check</button>
+            </div>
+            <div class="card p-8 shadow-md mb-auto rounded-3xl">
+                <img class="max-w-[344px] rounded-xl" src="./assets/image/card-image.png" alt="img">
+                <p class="text-2xl font-bold pt-4 ">Lorem ipsum dolor sit amet.</p>
+                <div class="cardText hidden duration-1000 ">
+                    <p class="max-w-[344px]">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi cum
+                        quibusdam blanditiis rerum ratione tenetur voluptatum, aliquam asperiores nisi est, iusto
+                        deserunt! Quia tempora molestias aliquid eligendi similique, perferendis temporibus. </p>
+                </div>
+                <button class="btn  text-white px-4 py-3  mt-3 rounded-full bg-blue-700">Go check</button>
+            </div>
+            
+            <div id="cookies-box" class="box bg-white absolute bottom-0 left-[-5%]">
+                <div class="flex">
+                    <div class="text max-w-[662px] ps-24 py-4 ">
+                        <p class="text-5xl font-normal pb-2">This site uses cookies</p>
+                        <p class="text-base font-normal">This site uses cookies small text files that are placed on your machine to help the site provide a better user experience. In general, cookies are used to retain user preferences, store information for things like shopping carts, and provide anonymized tracking data to third party applications like Google Analytics. <span class="font-semibold"> Learn more</span></p>
+                    </div>
+                    <div class="btns flex items-center gap-5 px-10">
+                        <button id="accept-btn" class="px-[62px] py-[14px] hover:text-white hover:bg-black border-2 border-black rounded-full">Accept</button>
+                        <button id="deny-btn" class="px-[62px] py-[14px] hover:text-white hover:bg-black border-2 border-black rounded-full">Deny</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+
+    </section>
+    <script>
+        const buttons = document.querySelectorAll('.btn');
+        const cardText = document.querySelectorAll('.cardText');
+
+        buttons.forEach((btn, index) => {
+            btn.addEventListener('mouseover', () => {
+                cardText[index].classList.remove('hidden');
+            });
+
+            btn.addEventListener('mouseout', () => {
+                cardText[index].classList.add('hidden');
+            });
+        });
+        // =============================
+        const cookiePopup = document.getElementById('cookies-box');
+        const acceptCookiesButton = document.getElementById('accept-btn');
+        const declineCookiesButton = document.getElementById('deny-btn');
+
+        acceptCookiesButton.addEventListener('click', () => {
+            localStorage.setItem('pop', 'accepted');
+            cookiePopup.classList.add('hidden');
+
+        });
+        declineCookiesButton.addEventListener('click', () => {
+            localStorage.setItem('pop', 'rejected');
+            cookiePopup.classList.add('hidden');
+        });
+
+        if (localStorage.getItem('pop')) {
+            cookiePopup.classList.add('hidden');
+        }
+    </script>
+</body>
+
+</html>
