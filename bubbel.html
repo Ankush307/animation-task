@@ -16,8 +16,11 @@
     }
 
     #background-wrap {
-        bottom: 50%;
+        bottom: 0%;
         left: 15%;
+        height: 700px;
+        border: 2px solid #fff;
+        width: 1100px;
         position: fixed;
         right: 0;
         top: 0;
@@ -26,123 +29,169 @@
 
     /* KEYFRAMES */
 
-    @keyframes animateBubble  {
-        0%{
-            transform: translateY(300px);
+    @keyframes animateBubble-1 {
+        0% {
+            bottom: 0;
+            left: 50%;
         }
-        10%{
-            transform: translatex(300px);
+
+        20% {
+            top: 40%;
+            left: 0;
         }
-        20%{
-            transform: translatex(-300px);
+
+        30% {
+            top: 0;
+            left: 40%;
         }
-        30%{
-            transform: translatex(200px);
+
+        60% {
+            top: 40%;
+            right: 0;
         }
-        30%{
-            transform: translatey(200px);
+
+        80% {
+            left: 40%;
+            top: 0;
         }
-        40%{
-            transform: translatey(5px);
-        }
-        50%{
-            transform: translatex(300px);
-        }
-        60%{
-            transform: translatey(200px);
-        }
-        70%{
-            transform: translatey(200px);
-        }
-        80%{
-            transform: translatey(200px);
-        }
-        90%{
-            transform: translatey(200px);
-        }
-        100%{
-            transform: translatey(200px);
+
+        100% {
+            top: 0;
+
         }
     }
 
+    @keyframes animateBubble-2 {
+        0% {
+            top: 50%;
+            right: 0;
 
-    @keyframes sideWays {}
+        }
+
+        10% {
+            bottom: 0%;
+            left: 50%;
+        }
+
+        40% {
+            bottom: 80%;
+            left: 90%;
+        }
+
+        60% {
+            top: 50%;
+            right: 0;
+        }
+
+        80% {
+            left: 50px;
+            right: 50%;
+        }
+
+        90% {
+            top: 0;
+        }
+
+        100% {
+            bottom: 50%;
+        }
+    }
+
+    @keyframes animateBubble-3 {
+        0% {
+            bottom: 0;
+            left: 0;
+        }
+
+        20% {
+            bottom: 50%;
+            right: 0;
+        }
+
+        30% {
+            top: 0;
+        }
+
+        50% {
+            top: 50%;
+            right: 50%;
+        }
+
+        70% {
+            top: 0%;
+            right: 100%;
+        }
+
+        90% {
+            top: 70%;
+            left: 0;
+        }
+
+        100% {
+            bottom: 90%;
+            left: 0;
+        }
+    }
+
+    @keyframes animateBubble-4 {
+        0% {
+		bottom: 0%;
+		margin-left: 90px;
+		margin-right: 0px;
+	}
+	20% {
+		bottom: 20%;
+		margin-left: 0px;
+		margin-right: 90px;
+	}
+	40% {
+		bottom: 40%;
+		margin-left: 90px;
+		margin-right: 0px;
+	}
+	60% {
+		bottom: 60%;
+		margin-left: 0px;
+		margin-right: 90px;
+	}
+	80% {
+		bottom: 80%;
+		margin-left: 90px;
+		margin-right: 0px;
+	}
+	100% {
+		bottom: 100%;
+		margin-left: 0px;
+		margin-right: 90px;
+	}
+}
 
     /* ANIMATIONS */
 
     .x1 {
-        animation: animateBubble 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
-        right: 0%;
+        animation: animateBubble-1 10s linear infinite, sideWays 0s ease-in-out infinite alternate;
         background-color: #fff;
-        top: 5%;
         transform: scale(.8);
     }
 
     .x2 {
-        animation: animateBubble 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
-        left: 0%;
+        animation: animateBubble-2 10s linear infinite, sideWays 0s ease-in-out infinite alternate;
         background-color: aquamarine;
-        top: 70%;
         transform: scale(0.5);
     }
 
     .x3 {
-        animation: animateBubble 28s linear infinite, sideWays 2s ease-in-out infinite alternate;
-        left: 10%;
+        animation: animateBubble-3 10s linear infinite, sideWays 0s ease-in-out infinite alternate;
         background-color: blanchedalmond;
-        top: 40%;
         transform: scale(0.7);
     }
 
     .x4 {
-        animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
-        left: 20%;
-        top: 0;
+        animation: animateBubble-4 10s linear infinite, sideWays 0s ease-in-out infinite alternate;
         background-color: darkgoldenrod;
         transform: scale(0.7);
     }
-    .x6 {
-        animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
-        left: 50%;
-        top: 0;
-        background-color: rgb(15, 70, 146);
-        transform: scale(0.7);
-    }
-    .x4 {
-        animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
-        left: 20%;
-        top: 0;
-        background-color: darkgoldenrod;
-        transform: scale(0.7);
-    }
-    .x4 {
-        animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
-        left: 20%;
-        top: 0;
-        background-color: darkgoldenrod;
-        transform: scale(0.7);
-    }
-    .x4 {
-        animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
-        left: 20%;
-        top: 0;
-        background-color: darkgoldenrod;
-        transform: scale(0.7);
-    }
-    .x4 {
-        animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
-        left: 20%;
-        top: 0;
-        background-color: darkgoldenrod;
-        transform: scale(0.7);
-    }
-    .x4 {
-        animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
-        left: 20%;
-        top: 0;
-        background-color: darkgoldenrod;
-        transform: scale(0.7);
-    }
+
 
     /* OBJECTS */
     .bubble {
@@ -169,12 +218,6 @@
             <div class="bubble x2"></div>
             <div class="bubble x3"></div>
             <div class="bubble x4"></div>
-            <div class="bubble x5"></div>
-            <div class="bubble x6"></div>
-            <div class="bubble x7"></div>
-            <div class="bubble x8"></div>
-            <div class="bubble x9"></div>
-            <div class="bubble x10"></div>
         </div>
 </body>
 
